@@ -3,6 +3,8 @@ package com.gmail.gian.springjpapostgres.model;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 /**
  * Created by GianPH - 1/5/2018
@@ -16,6 +18,8 @@ public class Employee {
     @GeneratedValue(generator = "uuid")
     private String id;
 
+    @NotNull
+    @NotEmpty
     @Column(name = "name")
     private String name;
 
