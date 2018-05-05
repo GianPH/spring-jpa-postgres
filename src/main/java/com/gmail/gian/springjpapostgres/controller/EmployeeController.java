@@ -87,7 +87,9 @@ public class EmployeeController {
         return ResponseEntity.status(HttpStatus.OK).body(objectNode);
     }
 
-    @PutMapping(value = "update/{id}", consumes = MediaType.APPLICATION_JSON_VALUE)
+    @PutMapping(value = "update/{id}",
+            consumes = MediaType.APPLICATION_JSON_VALUE,
+            produces = MediaType.APPLICATION_JSON_VALUE)
     public Employee updateEmployee(@PathVariable(value = "id") String id,
                                    @Valid @RequestBody Employee newEmployee) {
 
