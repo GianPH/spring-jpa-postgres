@@ -1,5 +1,6 @@
 package com.gmail.gian.springjpapostgres.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -26,6 +27,7 @@ public class Task {
     @Column(name = "task_name")
     private String name;
 
+    @JsonManagedReference
     @ManyToOne
     @JoinColumn(name = "student_id")
     private Student student;

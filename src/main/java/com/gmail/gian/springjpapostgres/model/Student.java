@@ -1,6 +1,6 @@
 package com.gmail.gian.springjpapostgres.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -27,7 +27,7 @@ public class Student {
     @Column(name = "name")
     private String name;
 
-    @JsonIgnore
+    @JsonBackReference
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "student")
     private List<Task> tasks;
 }
