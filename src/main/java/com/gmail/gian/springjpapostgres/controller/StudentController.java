@@ -22,7 +22,7 @@ public class StudentController {
     @Autowired
     StudentRepository studentRepository;
 
-    @GetMapping(value = {"", "list"},
+    @GetMapping(value = {"list"},
             produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<List<Student>> findAll() {
         List<Student> students = studentRepository.findAll();

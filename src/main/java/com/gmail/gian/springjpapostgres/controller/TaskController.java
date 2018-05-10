@@ -22,7 +22,7 @@ public class TaskController {
     @Autowired
     TaskRepository taskRepository;
 
-    @GetMapping(value = {"", "list"},
+    @GetMapping(value = {"list"},
             produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<List<Task>> findAll() {
         List<Task> tasks = taskRepository.findAll();
